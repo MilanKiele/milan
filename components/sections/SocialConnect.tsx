@@ -14,7 +14,7 @@ export function SocialConnect() {
             <span className="font-bold text-xl font-mono">M</span>
           </div>
           <span className="font-bold uppercase tracking-widest text-sm">
-            Milan Kiele<br />
+            <span translate="no">Milan Kiele</span><br />
             <span className="text-zinc-500 text-xs">Intelligence Labs</span>
           </span>
         </div>
@@ -46,7 +46,7 @@ export function SocialConnect() {
                 <p className="font-mono text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-white transition-colors duration-300 mb-1">
                   {label}
                 </p>
-                <p className="font-mono text-[10px] text-zinc-400 group-hover:text-blue-200 transition-colors duration-300 uppercase tracking-wide">
+                <p className="font-mono text-[10px] text-zinc-400 group-hover:text-blue-200 transition-colors duration-300 uppercase tracking-wide" translate="no">
                   {handle}
                 </p>
               </div>

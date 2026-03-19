@@ -14,7 +14,7 @@ export function Hero() {
             className="text-5xl md:text-6xl lg:text-[7rem] font-black uppercase tracking-[-0.05em] leading-[0.85] text-zinc-900 opacity-0 animate-[slideInLeft_0.7s_0.2s_both]"
             style={{ transform: "scaleX(1.2)", transformOrigin: "left" }}
           >
-            BEYOND<br />PROTOTYPES
+            PORTFOLIO
           </h1>
           {/* Decorative stacked lines */}
           <div className="absolute right-16 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3 animate-fade-in delay-600">

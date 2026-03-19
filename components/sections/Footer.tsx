@@ -48,7 +48,7 @@ export function Footer() {
 
       {/* Copyright bar */}
       <div className="p-8 font-mono text-[10px] text-zinc-500 uppercase tracking-widest bg-[#EBEBEB] flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <span>© {year} ALL RIGHTS RESERVED BY MILAN KIELE.</span>
+        <span>© {year} ALL RIGHTS RESERVED BY <span translate="no">MILAN KIELE</span>.</span>
         <div className="flex items-center gap-2">
           <Zap className="w-3 h-3 text-[#0055FF]" aria-hidden="true" />
           <span>Intelligence Labs</span>
@@ -67,6 +67,7 @@ export function Footer() {
         <span
           className="font-sans font-black uppercase text-zinc-900 leading-none tracking-tighter m-0 p-0 group-hover:text-[#0055FF] transition-colors duration-700 select-none w-full text-center"
           style={{ fontSize: "clamp(4rem, 20vw, 22rem)", transform: "scaleX(1.2)" }}
+          translate="no"
         >
           MILAN
         </span>

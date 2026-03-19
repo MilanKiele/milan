@@ -47,7 +47,7 @@ export function Navbar() {
               <span className="font-bold text-xl font-mono text-[#0055FF] group-hover:text-white transition-colors duration-300">M</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold uppercase tracking-widest text-sm leading-none">Milan Kiele</span>
+              <span className="font-bold uppercase tracking-widest text-sm leading-none" translate="no">Milan Kiele</span>
               <span className="font-mono text-[10px] uppercase text-zinc-500 tracking-widest mt-1">Intelligence Labs</span>
             </div>
           </Link>
