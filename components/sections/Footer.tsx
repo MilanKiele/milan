@@ -11,8 +11,8 @@ export function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-b border-zinc-300 text-xs font-mono font-bold uppercase tracking-widest text-zinc-600 bg-[#EBEBEB]">
         <nav aria-label="Ecosystem" className="border-b lg:border-b-0 md:border-r border-zinc-300 p-8 flex flex-col gap-4">
           <span className="text-[10px] text-zinc-400 mb-2">Ecosystem</span>
-          <a href="#mission"    className="hover:text-zinc-900 hover:translate-x-1 transition-all duration-200">Intelligence API</a>
-          <a href="#portfolio"  className="hover:text-zinc-900 hover:translate-x-1 transition-all duration-200">Edge Systems</a>
+          <a href="#mission" className="hover:text-zinc-900 hover:translate-x-1 transition-all duration-200">Intelligence API</a>
+          <a href="#portfolio" className="hover:text-zinc-900 hover:translate-x-1 transition-all duration-200">Edge Systems</a>
         </nav>
 
         <nav aria-label="Quick links" className="border-b lg:border-b-0 md:border-r border-zinc-300 p-8 flex flex-col gap-4">
@@ -26,7 +26,7 @@ export function Footer() {
           <span className="text-[10px] text-zinc-400 mb-2">Status</span>
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-slow" aria-hidden="true" />
-            Available
+            Building
           </span>
           <span>Based in Germany</span>
           <span>English C2</span>
@@ -34,8 +34,8 @@ export function Footer() {
 
         <nav aria-label="Social" className="p-8 flex flex-col gap-4 md:items-end justify-between">
           <div className="flex flex-col gap-4 md:items-end">
-            <a href="https://github.com/MilanKiele"             target="_blank" rel="noreferrer noopener" className="hover:text-zinc-900 flex items-center gap-2 group">GITHUB     <ArrowUpRight className="w-3 h-3 group-hover:rotate-12 transition-transform" /></a>
-            <a href="https://www.linkedin.com/in/milankiele"    target="_blank" rel="noreferrer noopener" className="hover:text-zinc-900 flex items-center gap-2 group">LINKEDIN   <ArrowUpRight className="w-3 h-3 group-hover:rotate-12 transition-transform" /></a>
+            <a href="https://github.com/MilanKiele" target="_blank" rel="noreferrer noopener" className="hover:text-zinc-900 flex items-center gap-2 group">GITHUB     <ArrowUpRight className="w-3 h-3 group-hover:rotate-12 transition-transform" /></a>
+            <a href="https://www.linkedin.com/in/milankiele" target="_blank" rel="noreferrer noopener" className="hover:text-zinc-900 flex items-center gap-2 group">LINKEDIN   <ArrowUpRight className="w-3 h-3 group-hover:rotate-12 transition-transform" /></a>
           </div>
           <a
             href="mailto:mail@milankiele.com"

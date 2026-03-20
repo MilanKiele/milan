@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ArrowRight, Database, Cpu } from "lucide-react";
 import { BracketBox } from "@/components/ui/BracketBox";
 import { SquareBullet } from "@/components/ui/SquareBullet";
@@ -8,6 +9,16 @@ import { useInView } from "@/hooks/useInView";
 
 export function HeroContent() {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const [isActivating, setIsActivating] = useState(false);
+  const [isActivated, setIsActivated] = useState(false);
+
+  const handleActivate = () => {
+    setIsActivating(true);
+    setTimeout(() => {
+      setIsActivating(false);
+      setIsActivated(true);
+    }, 1500);
+  };
 
   return (
     <section ref={ref} aria-label="About Milan Kiele" className="grid grid-cols-1 lg:grid-cols-12 border-b border-zinc-300">
@@ -50,27 +61,36 @@ export function HeroContent() {
           <div className="absolute top-20 w-full border-t border-zinc-200" />
           <div className="absolute bottom-20 w-full border-t border-zinc-200" />
 
-          {/* Core element */}
-          <button 
-            type="button"
-            className="relative z-10 w-48 h-48 border-4 border-[#0055FF] bg-white rounded-3xl shadow-[0_0_40px_rgba(0,85,255,0.2)] flex items-center justify-center transition-all duration-500 hover:scale-[1.15] hover:border-zinc-900 hover:shadow-[0_0_80px_rgba(0,85,255,0.4)] active:scale-95 group/robot focus:outline-none cursor-none animate-float hover:animate-none"
-            data-visor="true"
-            aria-label="Interact with Core System"
-          >
-            <div className="grid grid-cols-2 gap-4 group-hover/robot:gap-6 transition-all duration-500">
-              <div className="w-8 h-8 bg-zinc-900 rounded-full group-hover/robot:bg-[#0055FF] transition-colors duration-500" />
-              <div className="w-8 h-8 bg-zinc-900 rounded-full group-hover/robot:bg-[#0055FF] transition-colors duration-500" />
-            </div>
-            
-            <div className="absolute -bottom-6 flex gap-2 group-hover/robot:-bottom-8 transition-all duration-500">
-              <div className="w-2 h-2 bg-[#0055FF] animate-pulse-slow group-hover/robot:bg-zinc-900" />
-              <div className="w-2 h-2 bg-[#0055FF] animate-pulse-slow delay-200 group-hover/robot:bg-zinc-900" />
-              <div className="w-2 h-2 bg-zinc-300 animate-pulse-slow delay-400 group-hover/robot:bg-zinc-900" />
-            </div>
+          {/* Core element wrapper for entry animation */}
+          <div className={`relative z-10 ${inView ? "animate-scale-in" : "opacity-0"}`} style={{ animationDelay: "600ms", animationFillMode: "both" }}>
+            {/* Core element */}
+            <button 
+              type="button"
+              className={`relative z-10 w-48 h-48 border-4 bg-white rounded-3xl flex flex-col items-center justify-center transition-all duration-500 group/robot focus:outline-none cursor-none ${
+                isActivating
+                  ? "border-[#0055FF] shadow-[0_0_150px_rgba(0,85,255,0.8)] scale-125 animate-[spin_0.5s_linear_infinite]"
+                  : isActivated
+                  ? "border-green-500 shadow-[0_0_80px_rgba(34,197,94,0.6)] animate-float scale-110"
+                  : "border-[#0055FF] shadow-[0_0_40px_rgba(0,85,255,0.2)] hover:scale-[1.15] hover:border-zinc-900 hover:shadow-[0_0_80px_rgba(0,85,255,0.4)] active:scale-95 animate-float hover:animate-none"
+              }`}
+              data-visor="true"
+              aria-label="Interact with Core System"
+            >
+              <div className="grid grid-cols-2 gap-4 group-hover/robot:gap-6 transition-all duration-500">
+                <div className={`w-8 h-8 rounded-full transition-colors duration-500 ${isActivated ? "bg-green-500" : "bg-zinc-900 group-hover/robot:bg-[#0055FF]"}`} />
+                <div className={`w-8 h-8 rounded-full transition-colors duration-500 ${isActivated ? "bg-green-500" : "bg-zinc-900 group-hover/robot:bg-[#0055FF]"}`} />
+              </div>
+              
+              <div className="absolute -bottom-6 flex gap-2 group-hover/robot:-bottom-8 transition-all duration-500">
+                <div className="w-2 h-2 bg-[#0055FF] animate-pulse-slow group-hover/robot:bg-zinc-900" />
+                <div className="w-2 h-2 bg-[#0055FF] animate-pulse-slow delay-200 group-hover/robot:bg-zinc-900" />
+                <div className="w-2 h-2 bg-zinc-300 animate-pulse-slow delay-400 group-hover/robot:bg-zinc-900" />
+              </div>
 
-            {/* Glowing inner core that scans on hover */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-red-500 opacity-0 group-hover/robot:opacity-100 group-hover/robot:animate-[scan_1s_linear_infinite]" />
-          </button>
+              {/* Glowing inner core that scans on hover */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-red-500 opacity-0 group-hover/robot:opacity-100 group-hover/robot:animate-[scan_1s_linear_infinite]" />
+            </button>
+          </div>
 
           {/* Checkerboard */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex" aria-hidden="true">
@@ -78,6 +98,29 @@ export function HeroContent() {
               <div key={i} className={`w-6 h-6 ${i % 2 === 0 ? "bg-zinc-200" : "bg-transparent"}`} />
             ))}
           </div>
+
+          {isActivated ? (
+            <a
+              href="https://storsko.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-16 z-20 bg-green-500 text-white font-mono text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-zinc-900 transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(34,197,94,0.4)] animate-fade-up"
+            >
+              HIRE YOUR BOT INTERN
+            </a>
+          ) : (
+            <div className={`absolute bottom-16 z-20 ${inView ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "900ms", animationFillMode: "both" }}>
+              <button
+                onClick={handleActivate}
+                disabled={isActivating}
+                className={`bg-zinc-900 text-white font-mono text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-[#0055FF] transition-all duration-300 block ${
+                  isActivating ? "opacity-50 cursor-not-allowed scale-95" : "hover:scale-105"
+                }`}
+              >
+                {isActivating ? "ACTIVATING..." : "ACTIVATE BOT"}
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="absolute top-1/2 left-0 w-4 border-t border-zinc-400"  aria-hidden="true" />

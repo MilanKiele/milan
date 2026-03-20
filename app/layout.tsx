@@ -154,9 +154,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* GEO meta — rendered directly for legacy support */}
-        <meta name="geo.region"    content="DE" />
+        <meta name="geo.region" content="DE" />
         <meta name="geo.placename" content="Germany" />
-        <meta name="ICBM"          content="51.1657, 10.4515" />
+        <meta name="ICBM" content="51.1657, 10.4515" />
       </head>
       <body className={`${inter.className} antialiased overflow-x-hidden`}>
         <CustomCursor />
