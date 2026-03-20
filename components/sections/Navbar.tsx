@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Mission",    href: "#mission" },
-  { label: "Portfolio",  href: "#portfolio" },
+  { label: "Mission", href: "#mission" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills",     href: "#skills" },
-  { label: "Contact",    href: "#contact" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -69,7 +69,7 @@ export function Navbar() {
 
         {/* Universal Menu Toggle (Desktop & Mobile) */}
         <div className="col-span-3 lg:col-span-3 flex items-center justify-end p-6">
-          <button 
+          <button
             className="p-2 text-zinc-900 hover:text-[#0055FF] focus:outline-none transition-colors duration-300"
             onClick={() => (!isOpen || isClosing) ? openMenu() : closeMenu()}
             aria-label="Toggle menu"
@@ -84,13 +84,13 @@ export function Navbar() {
       {isOpen && (
         <div className={`fixed inset-x-0 bottom-0 top-[89px] z-40 bg-[#EBEBEB] flex justify-center overflow-y-auto w-full ${isClosing ? "animate-fade-out" : "animate-fade-in"}`}>
           <div className="w-full max-w-[1600px] min-h-full bg-[#EBEBEB] flex flex-col xl:flex-row relative border-l border-r border-zinc-300">
-            
+
             {/* Left Side: Directory Nav */}
             <div className="flex-[0.6] border-b xl:border-b-0 xl:border-r border-zinc-300 p-6 lg:p-16 xl:p-24 flex flex-col justify-center">
               <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-6 lg:mb-12 block mt-2 lg:mt-0">
                 Directory
               </span>
-              
+
               <div className="flex flex-col gap-4 lg:gap-12 ml-4 lg:ml-8 border-l border-zinc-300 pl-6 lg:pl-16 flex-grow justify-center pb-4 lg:pb-12">
                 {NAV_LINKS.map(({ label, href }, i) => (
                   <a
@@ -114,7 +114,7 @@ export function Navbar() {
             {/* Right Side: Connectivity & Status */}
             <div className="flex-[0.4] p-6 lg:p-16 xl:p-24 flex flex-col bg-[#EBEBEB] justify-center">
               <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-6 lg:mb-12 block mt-4 xl:mt-0">Connectivity</span>
-              
+
               <div className="flex flex-col border-t border-zinc-300 animate-fade-up justify-center flex-grow">
                 {/* Connectivity Links */}
                 {[
@@ -122,14 +122,14 @@ export function Navbar() {
                   { name: "GitHub / MK-Intel", href: "https://github.com/MilanKiele" },
                   { name: "mail@milankiele.com", href: "mailto:mail@milankiele.com" }
                 ].map((link, i) => (
-                  <a 
-                    key={link.name} 
-                    href={link.href} 
+                  <a
+                    key={link.name}
+                    href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noreferrer noopener" : undefined}
                     onClick={handleLinkClick}
                     className="flex items-center justify-between py-4 lg:py-8 border-b border-zinc-300 group hover:pl-4 transition-all"
-                    style={{ animationDelay: `${(i+4) * 100}ms`, animationFillMode: "both" }}
+                    style={{ animationDelay: `${(i + 4) * 100}ms`, animationFillMode: "both" }}
                   >
                     <span className="font-mono text-[10px] lg:text-sm font-bold uppercase tracking-wider text-zinc-900 group-hover:text-[#0055FF]">
                       {link.name}
@@ -143,7 +143,7 @@ export function Navbar() {
               <div className="mt-8 lg:mt-16 xl:mt-auto border border-zinc-300 p-6 lg:p-12 bg-white group hover:border-[#0055FF] transition-colors animate-fade-up delay-700 w-full mb-4 lg:mb-0">
                 <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-6 block">Current Status</span>
                 <p className="font-mono text-xs lg:text-sm text-zinc-900 uppercase tracking-wider leading-relaxed">
-                  Available for high-stakes intelligence architecture<br className="hidden xl:block" /> and systems engineering consultation.
+                  Available for high-stakes intelligence architecture<br className="hidden xl:block" />
                 </p>
               </div>
             </div>
