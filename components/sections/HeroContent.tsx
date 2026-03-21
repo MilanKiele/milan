@@ -17,6 +17,11 @@ export function HeroContent() {
     setTimeout(() => {
       setIsActivating(false);
       setIsActivated(true);
+      
+      // Turn back to default after 20 seconds
+      setTimeout(() => {
+        setIsActivated(false);
+      }, 20000);
     }, 1500);
   };
 
