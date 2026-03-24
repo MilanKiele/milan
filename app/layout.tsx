@@ -162,7 +162,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Germany" />
         <meta name="ICBM" content="51.1657, 10.4515" />
       </head>
-      <body className={`${inter.className} antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} antialiased overflow-x-hidden`} suppressHydrationWarning>
         <CustomCursor />
         {children}
         <Analytics />
