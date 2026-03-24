@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { inter } from "@/lib/font";
 import { CustomCursor } from "@/components/ui/Cursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { BASE_URL } from "@/constants";
 
 
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
 // ─── METADATA ─────────────────────────────────────────────────────────────────
 // Comprehensive SEO + Open Graph + Twitter Card + GEO targeting
-
-const BASE_URL = "https://milankiele.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
