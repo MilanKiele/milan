@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CustomCursor } from "@/components/ui/Cursor";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
+
 import "./globals.css";
 
 const inter = Inter({
@@ -162,6 +165,8 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased overflow-x-hidden`}>
         <CustomCursor />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
