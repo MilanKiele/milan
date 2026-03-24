@@ -18,10 +18,10 @@ export function HeroContent() {
       setIsActivating(false);
       setIsActivated(true);
 
-      // Turn back to default after 20 seconds
+      // Open storsko.com in a new tab after a brief moment to show the activated state
       setTimeout(() => {
-        setIsActivated(false);
-      }, 20000);
+        window.open("https://storsko.com", "_blank", "noopener,noreferrer");
+      }, 800);
     }, 1500);
   };
 
