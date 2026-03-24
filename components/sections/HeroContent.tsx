@@ -17,12 +17,14 @@ export function HeroContent() {
     setTimeout(() => {
       setIsActivating(false);
       setIsActivated(true);
-
-      // Open storsko.com in a new tab after a brief moment to show the activated state
-      setTimeout(() => {
-        window.open("https://storsko.com", "_blank", "noopener,noreferrer");
-      }, 800);
     }, 1500);
+  };
+
+  const handleHireRobot = () => {
+    window.open("https://storsko.com", "_blank", "noopener,noreferrer");
+    setTimeout(() => {
+      setIsActivated(false);
+    }, 30000);
   };
 
   return (
@@ -104,14 +106,12 @@ export function HeroContent() {
           </div>
 
           {isActivated ? (
-            <a
-              href="https://www.linkedin.com/in/milankiele"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleHireRobot}
               className="absolute bottom-16 z-20 bg-green-500 text-white font-mono text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-zinc-900 transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(34,197,94,0.4)] animate-fade-up"
             >
-              CONNECT
-            </a>
+              HIRE ROBOT
+            </button>
           ) : (
             <div className={`absolute bottom-16 z-20 ${inView ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "900ms", animationFillMode: "both" }}>
               <button
